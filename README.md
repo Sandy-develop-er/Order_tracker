@@ -17,7 +17,8 @@ A Flutter plugin for iOS and Android for order tracker same as flipkart order tr
 
 ## Installation
 
-First, add `order_tracker` as a [dependency in your pubspec.yaml file](https://flutter.dev/using-packages/).
+First, add `order_tracker` as
+a [dependency in your pubspec.yaml file](https://flutter.dev/using-packages/).
 
 ## Example
 

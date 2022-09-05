@@ -188,11 +188,13 @@ class _OrderTrackerState extends State<OrderTracker>
                     children: [
                       TextSpan(
                           text: "Order Placed ",
-                          style: widget.headingTitleStyle ?? const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
+                          style: widget.headingTitleStyle ??
+                              const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold)),
                       TextSpan(
                         text: "Fri, 25th Mar '22",
-                        style: widget.headingDateTextStyle ?? const TextStyle(fontSize: 16, color: Colors.grey),
+                        style: widget.headingDateTextStyle ??
+                            const TextStyle(fontSize: 16, color: Colors.grey),
                       ),
                     ],
                   ),
@@ -234,15 +236,17 @@ class _OrderTrackerState extends State<OrderTracker>
                           children: [
                             Text(
                               widget.orderTitleAndDateList?[index].title ?? "",
-                              style: widget.subTitleTextStyle ?? const TextStyle(fontSize: 14),
+                              style: widget.subTitleTextStyle ??
+                                  const TextStyle(fontSize: 14),
                             ),
                             const SizedBox(
                               height: 4,
                             ),
                             Text(
                               widget.orderTitleAndDateList?[index].date ?? "",
-                              style: widget.subDateTextStyle ?? TextStyle(
-                                  fontSize: 14, color: Colors.grey[300]),
+                              style: widget.subDateTextStyle ??
+                                  TextStyle(
+                                      fontSize: 14, color: Colors.grey[300]),
                             )
                           ],
                         );
@@ -289,11 +293,13 @@ class _OrderTrackerState extends State<OrderTracker>
                     children: [
                       TextSpan(
                           text: "Shipped ",
-                          style: widget.headingTitleStyle ?? const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
+                          style: widget.headingTitleStyle ??
+                              const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold)),
                       TextSpan(
                         text: "Fri, 28th Mar '22",
-                        style: widget.headingDateTextStyle ?? const TextStyle(fontSize: 16, color: Colors.grey),
+                        style: widget.headingDateTextStyle ??
+                            const TextStyle(fontSize: 16, color: Colors.grey),
                       ),
                     ],
                   ),
@@ -338,15 +344,17 @@ class _OrderTrackerState extends State<OrderTracker>
                             Text(
                               widget.shippedTitleAndDateList?[index].title ??
                                   "",
-                              style: widget.subTitleTextStyle ?? const TextStyle(fontSize: 14),
+                              style: widget.subTitleTextStyle ??
+                                  const TextStyle(fontSize: 14),
                             ),
                             const SizedBox(
                               height: 4,
                             ),
                             Text(
                               widget.shippedTitleAndDateList?[index].date ?? "",
-                              style: widget.subDateTextStyle ?? TextStyle(
-                                  fontSize: 14, color: Colors.grey[300]),
+                              style: widget.subDateTextStyle ??
+                                  TextStyle(
+                                      fontSize: 14, color: Colors.grey[300]),
                             )
                           ],
                         );
@@ -392,11 +400,13 @@ class _OrderTrackerState extends State<OrderTracker>
                     children: [
                       TextSpan(
                           text: "Out of delivery ",
-                          style: widget.headingTitleStyle ?? const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
+                          style: widget.headingTitleStyle ??
+                              const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold)),
                       TextSpan(
                         text: "Fri, 29th Mar '22",
-                        style: widget.headingDateTextStyle ?? const TextStyle(fontSize: 16, color: Colors.grey),
+                        style: widget.headingDateTextStyle ??
+                            const TextStyle(fontSize: 16, color: Colors.grey),
                       ),
                     ],
                   ),
@@ -442,7 +452,8 @@ class _OrderTrackerState extends State<OrderTracker>
                               widget.outOfDeliveryTitleAndDateList?[index]
                                       .title ??
                                   "",
-                              style: widget.subTitleTextStyle ?? const TextStyle(fontSize: 14),
+                              style: widget.subTitleTextStyle ??
+                                  const TextStyle(fontSize: 14),
                             ),
                             const SizedBox(
                               height: 4,
@@ -451,8 +462,9 @@ class _OrderTrackerState extends State<OrderTracker>
                               widget.outOfDeliveryTitleAndDateList?[index]
                                       .date ??
                                   "",
-                              style: widget.subDateTextStyle ?? TextStyle(
-                                  fontSize: 14, color: Colors.grey[300]),
+                              style: widget.subDateTextStyle ??
+                                  TextStyle(
+                                      fontSize: 14, color: Colors.grey[300]),
                             )
                           ],
                         );
@@ -493,11 +505,13 @@ class _OrderTrackerState extends State<OrderTracker>
                     children: [
                       TextSpan(
                           text: "Delivered ",
-                          style: widget.headingTitleStyle ?? const TextStyle(
-                              fontSize: 16, fontWeight: FontWeight.bold)),
+                          style: widget.headingTitleStyle ??
+                              const TextStyle(
+                                  fontSize: 16, fontWeight: FontWeight.bold)),
                       TextSpan(
                         text: "Fri, 31th Mar '22",
-                        style: widget.headingDateTextStyle ?? const TextStyle(fontSize: 16, color: Colors.grey),
+                        style: widget.headingDateTextStyle ??
+                            const TextStyle(fontSize: 16, color: Colors.grey),
                       ),
                     ],
                   ),
@@ -514,14 +528,16 @@ class _OrderTrackerState extends State<OrderTracker>
                     children: [
                       Text(
                         widget.deliveredTitleAndDateList?[index].title ?? "",
-                        style: widget.subTitleTextStyle ?? const TextStyle(fontSize: 14),
+                        style: widget.subTitleTextStyle ??
+                            const TextStyle(fontSize: 14),
                       ),
                       const SizedBox(
                         height: 4,
                       ),
                       Text(
                         widget.deliveredTitleAndDateList?[index].date ?? "",
-                        style: widget.subDateTextStyle ?? TextStyle(fontSize: 14, color: Colors.grey[300]),
+                        style: widget.subDateTextStyle ??
+                            TextStyle(fontSize: 14, color: Colors.grey[300]),
                       )
                     ],
                   );

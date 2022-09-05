@@ -9,13 +9,13 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-
   ///this TextDto present in a package add data in this dto and set in a list.
 
   List<TextDto> orderList = [
     TextDto("Your order has been placed", "Fri, 25th Mar '22 - 10:47pm"),
     TextDto("Seller ha processed your order", "Sun, 27th Mar '22 - 10:19am"),
-    TextDto("Your item has been picked up by courier partner.", "Tue, 29th Mar '22 - 5:00pm"),
+    TextDto("Your item has been picked up by courier partner.",
+        "Tue, 29th Mar '22 - 5:00pm"),
   ];
 
   List<TextDto> shippedList = [
