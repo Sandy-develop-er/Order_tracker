@@ -1,6 +1,6 @@
 # Order tracker plugin for Flutter
 
-A Flutter plugin for iOS and Android for playing back video on a Widget surface.
+A Flutter plugin for iOS and Android for order tracker same as flipkart order tracker ui.
 
 |             | Android | iOS  |
 |-------------|---------|------|
@@ -13,7 +13,7 @@ A Flutter plugin for iOS and Android for playing back video on a Widget surface.
 
 ## Gif
 
-<video src="https://github.com/Sandy-develop-er/Order_tracker/blob/master/lib/gif/demo.gif" width="500" height="600"></video>
+<img src="https://github.com/Sandy-develop-er/Order_tracker/blob/master/lib/gif/demo.gif"/>
 
 ## Installation
 
