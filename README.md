@@ -11,9 +11,9 @@ A Flutter plugin for iOS and Android for playing back video on a Widget surface.
 - Add icons in a text place.
 - Update ui.
 
-[comment]: <> (## Screenshots)
+## Gif
 
-[comment]: <> (<video src="https://raw.githubusercontent.com/Sandy-develop-er/smart-player/master/screen_shot/start_screen.png" width="500" height="600"/>)
+<video src="https://github.com/Sandy-develop-er/Order_tracker/blob/master/lib/gif/demo.gif" width="500" height="600"></video>
 
 ## Installation
 
