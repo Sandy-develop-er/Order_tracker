@@ -13,7 +13,7 @@ A Flutter plugin for iOS and Android for order tracker same as flipkart order tr
 
 ## Gif
 
-<img src="https://github.com/Sandy-develop-er/Order_tracker/blob/master/lib/gif/demo.gif"/>
+<img src="https://github.com/Sandy-develop-er/Order_tracker/raw/master/lib/gif/demo.gif"/>
 
 ## Installation
 
