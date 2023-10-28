@@ -172,6 +172,14 @@ class _OrderTrackerState extends State<OrderTracker>
   }
 
   @override
+  dispose() {
+    controller!.dispose();
+    controller2!.dispose(); // you need this
+    controller3!.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
