@@ -13,7 +13,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<TextDto> orderList = [
     TextDto("Your order has been placed", "Fri, 25th Mar '22 - 10:47pm"),
-    TextDto("Seller ha processed your order", "Sun, 27th Mar '22 - 10:19am"),
+    TextDto("Seller has processed your order", "Sun, 27th Mar '22 - 10:19am"),
     TextDto("Your item has been picked up by courier partner.",
         "Tue, 29th Mar '22 - 5:00pm"),
   ];
@@ -40,7 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: OrderTracker(
-          status: Status.delivered,
+          orderPlacedDate: "Order Placed Date",
+          pickedDate: 'this is picked date',
+          status: Status.dispatched,
           activeColor: Colors.green,
           inActiveColor: Colors.grey[300],
           orderTitleAndDateList: orderList,
