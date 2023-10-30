@@ -420,7 +420,7 @@ class _OrderTrackerState extends State<OrderTracker>
                   TextSpan(
                     children: [
                       TextSpan(
-                          text: 'Dispatched ',
+                          text: 'Shipped ',
                           style: widget.headingTitleStyle ??
                               const TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold)),
