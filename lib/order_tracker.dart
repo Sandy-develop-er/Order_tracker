@@ -18,6 +18,10 @@ class OrderTracker extends StatefulWidget {
 
   /// This variable is used to get list of delivered sub title and date to show present status of product.
   final List<TextDto>? deliveredTitleAndDateList;
+  final orderPlacedDate;
+  final pickedDate;
+  final dispatchedDate;
+  final deliveredDate;
 
   /// This variable is used to change color of active animation border.
   final Color? activeColor;
@@ -49,7 +53,11 @@ class OrderTracker extends StatefulWidget {
       this.headingTitleStyle,
       this.headingDateTextStyle,
       this.subTitleTextStyle,
-      this.subDateTextStyle})
+      this.subDateTextStyle,
+      this.orderPlacedDate,
+      this.pickedDate,
+      this.dispatchedDate,
+      this.deliveredDate})
       : super(key: key);
 
   @override
@@ -85,7 +93,7 @@ class _OrderTrackerState extends State<OrderTracker>
           }
           setState(() {});
         });
-    } else if (widget.status?.name == Status.shipped.name) {
+    } else if (widget.status?.name == Status.picked.name) {
       ///initialize first controller
       controller = AnimationController(
         vsync: this,
@@ -113,7 +121,7 @@ class _OrderTrackerState extends State<OrderTracker>
           }
           setState(() {});
         });
-    } else if (widget.status?.name == Status.outOfDelivery.name ||
+    } else if (widget.status?.name == Status.dispatched.name ||
         widget.status?.name == Status.delivered.name) {
       ///initialize first controller
       controller = AnimationController(
@@ -164,6 +172,14 @@ class _OrderTrackerState extends State<OrderTracker>
   }
 
   @override
+  dispose() {
+    controller!.dispose();
+    controller2!.dispose(); // you need this
+    controller3!.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -191,11 +207,14 @@ class _OrderTrackerState extends State<OrderTracker>
                           style: widget.headingTitleStyle ??
                               const TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold)),
-                      TextSpan(
-                        text: "Fri, 25th Mar '22",
-                        style: widget.headingDateTextStyle ??
-                            const TextStyle(fontSize: 16, color: Colors.grey),
-                      ),
+                      widget.orderPlacedDate != null
+                          ? TextSpan(
+                              text: "${widget.orderPlacedDate}",
+                              style: widget.headingDateTextStyle ??
+                                  const TextStyle(
+                                      fontSize: 16, color: Colors.grey),
+                            )
+                          : TextSpan(),
                     ],
                   ),
                 ),
@@ -275,9 +294,9 @@ class _OrderTrackerState extends State<OrderTracker>
                   height: 15,
                   width: 15,
                   decoration: BoxDecoration(
-                      color: (widget.status?.name == Status.shipped.name ||
+                      color: (widget.status?.name == Status.picked.name ||
                                   widget.status?.name ==
-                                      Status.outOfDelivery.name ||
+                                      Status.dispatched.name ||
                                   widget.status?.name ==
                                       Status.delivered.name) &&
                               isFirst == true
@@ -292,15 +311,18 @@ class _OrderTrackerState extends State<OrderTracker>
                   TextSpan(
                     children: [
                       TextSpan(
-                          text: "Shipped ",
+                          text: "Picked ",
                           style: widget.headingTitleStyle ??
                               const TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold)),
-                      TextSpan(
-                        text: "Fri, 28th Mar '22",
-                        style: widget.headingDateTextStyle ??
-                            const TextStyle(fontSize: 16, color: Colors.grey),
-                      ),
+                      widget.pickedDate != null
+                          ? TextSpan(
+                              text: widget.pickedDate,
+                              style: widget.headingDateTextStyle ??
+                                  const TextStyle(
+                                      fontSize: 16, color: Colors.grey),
+                            )
+                          : TextSpan(),
                     ],
                   ),
                 ),
@@ -383,13 +405,12 @@ class _OrderTrackerState extends State<OrderTracker>
                   height: 15,
                   width: 15,
                   decoration: BoxDecoration(
-                      color:
-                          (widget.status?.name == Status.outOfDelivery.name ||
-                                      widget.status?.name ==
-                                          Status.delivered.name) &&
-                                  isSecond == true
-                              ? widget.activeColor ?? Colors.green
-                              : widget.inActiveColor ?? Colors.grey[300],
+                      color: (widget.status?.name == Status.dispatched.name ||
+                                  widget.status?.name ==
+                                      Status.delivered.name) &&
+                              isSecond == true
+                          ? widget.activeColor ?? Colors.green
+                          : widget.inActiveColor ?? Colors.grey[300],
                       borderRadius: BorderRadius.circular(50)),
                 ),
                 const SizedBox(
@@ -399,15 +420,18 @@ class _OrderTrackerState extends State<OrderTracker>
                   TextSpan(
                     children: [
                       TextSpan(
-                          text: "Out of delivery ",
+                          text: 'Shipped ',
                           style: widget.headingTitleStyle ??
                               const TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold)),
-                      TextSpan(
-                        text: "Fri, 29th Mar '22",
-                        style: widget.headingDateTextStyle ??
-                            const TextStyle(fontSize: 16, color: Colors.grey),
-                      ),
+                      widget.dispatchedDate != null
+                          ? TextSpan(
+                              text: widget.dispatchedDate,
+                              style: widget.headingDateTextStyle ??
+                                  const TextStyle(
+                                      fontSize: 16, color: Colors.grey),
+                            )
+                          : TextSpan(),
                     ],
                   ),
                 ),
@@ -508,11 +532,14 @@ class _OrderTrackerState extends State<OrderTracker>
                           style: widget.headingTitleStyle ??
                               const TextStyle(
                                   fontSize: 16, fontWeight: FontWeight.bold)),
-                      TextSpan(
-                        text: "Fri, 31th Mar '22",
-                        style: widget.headingDateTextStyle ??
-                            const TextStyle(fontSize: 16, color: Colors.grey),
-                      ),
+                      widget.deliveredDate != null
+                          ? TextSpan(
+                              text: widget.deliveredDate,
+                              style: widget.headingDateTextStyle ??
+                                  const TextStyle(
+                                      fontSize: 16, color: Colors.grey),
+                            )
+                          : TextSpan(),
                     ],
                   ),
                 ),
@@ -565,4 +592,4 @@ class TextDto {
   TextDto(this.title, this.date);
 }
 
-enum Status { order, shipped, outOfDelivery, delivered }
+enum Status { order, picked, dispatched, delivered }
